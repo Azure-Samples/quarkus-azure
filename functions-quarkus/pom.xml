@@ -9,7 +9,7 @@
     <azure.functions.maven.plugin.version>1.22.0</azure.functions.maven.plugin.version>
     <compiler-plugin.version>3.8.1</compiler-plugin.version>
     <function>quarkus</function>
-    <functionAppName>functions-quarkus</functionAppName>
+    <functionAppName>${functionResourceGroup}-functions-quarkus</functionAppName>
     <functionAppRegion></functionAppRegion>
     <functionResourceGroup></functionResourceGroup>
     <functionSubscriptionId></functionSubscriptionId>
@@ -95,6 +95,8 @@
             <type>device_code</type>
             <tenant>${tenantId}</tenant>
           </auth>
+          <hostJson>${stagingDirectory}/host.json</hostJson>
+          <localSettingsJson>${stagingDirectory}/local.settings.json</localSettingsJson>
           <appName>${functionAppName}</appName>
           <region>${functionAppRegion}</region>
           <resourceGroup>${functionResourceGroup}</resourceGroup>
