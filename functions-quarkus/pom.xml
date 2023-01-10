@@ -6,7 +6,7 @@
   <artifactId>quarkus-azure-function</artifactId>
   <version>1.0.0</version>
   <properties>
-    <azure.functions.maven.plugin.version>1.9.1</azure.functions.maven.plugin.version>
+    <azure.functions.maven.plugin.version>1.22.0</azure.functions.maven.plugin.version>
     <compiler-plugin.version>3.8.1</compiler-plugin.version>
     <function>quarkus</function>
     <functionAppName>functions-quarkus</functionAppName>
@@ -91,6 +91,10 @@
         <artifactId>azure-functions-maven-plugin</artifactId>
         <version>${azure.functions.maven.plugin.version}</version>
         <configuration>
+          <auth>
+            <type>device_code</type>
+            <tenant>${tenantId}</tenant>
+          </auth>
           <appName>${functionAppName}</appName>
           <region>${functionAppRegion}</region>
           <resourceGroup>${functionResourceGroup}</resourceGroup>
