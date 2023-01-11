@@ -9,13 +9,13 @@
     <azure.functions.maven.plugin.version>1.22.0</azure.functions.maven.plugin.version>
     <compiler-plugin.version>3.8.1</compiler-plugin.version>
     <function>quarkus</function>
-    <functionAppName>${functionResourceGroup}-functions-quarkus</functionAppName>
+    <!-- prepend resource group name to function app name to avoid naming conflict -->
+    <functionAppName>${resourceGroup}-functions-quarkus</functionAppName>
     <functionAppRegion></functionAppRegion>
-    <functionResourceGroup></functionResourceGroup>
     <functionSubscriptionId></functionSubscriptionId>
     <maven.compiler.parameters>true</maven.compiler.parameters>
-    <maven.compiler.source>11</maven.compiler.source>
-    <maven.compiler.target>11</maven.compiler.target>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <quarkus-plugin.version>2.13.0.Final</quarkus-plugin.version>
@@ -61,6 +61,30 @@
   <build>
     <plugins>
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <version>3.1.0</version>
+        <executions>
+          <execution>
+            <id>enforce-property</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <requireProperty>
+                  <property>resourceGroup</property>
+                  <message>You must set a resourceGroup property!</message>
+                  <regex>^[a-zA-Z0-9-]*{9,16}$</regex>
+                  <regexMessage>The resourceGroup property must have between 9 - 16 characters and consist only of letters, numbers, and hyphens.</regexMessage>
+                </requireProperty>
+              </rules>
+              <fail>true</fail>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
         <groupId>io.quarkus</groupId>
         <artifactId>quarkus-maven-plugin</artifactId>
         <version>${quarkus-plugin.version}</version>
@@ -99,16 +123,16 @@
           <localSettingsJson>${stagingDirectory}/local.settings.json</localSettingsJson>
           <appName>${functionAppName}</appName>
           <region>${functionAppRegion}</region>
-          <resourceGroup>${functionResourceGroup}</resourceGroup>
+          <resourceGroup>${resourceGroup}</resourceGroup>
           <subscriptionId>${functionSubscriptionId}</subscriptionId>
           <runtime>
             <os>windows</os>
-            <javaVersion>11</javaVersion>
+            <javaVersion>17</javaVersion>
           </runtime>
           <appSettings>
             <property>
               <name>FUNCTIONS_EXTENSION_VERSION</name>
-              <value>~3</value>
+              <value>~4</value>
             </property>
           </appSettings>
         </configuration>
