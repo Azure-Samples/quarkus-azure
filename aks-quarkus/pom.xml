@@ -40,14 +40,12 @@
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-kubernetes</artifactId>
     </dependency>
+    <!-- added by reader with call to `quarkus ext add kubernetes container-image-jib`
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-container-image-jib</artifactId>
     </dependency>
-    <dependency>
-      <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-kubernetes-config</artifactId>
-    </dependency>
+    -->
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-junit5</artifactId>
