@@ -1,5 +1,7 @@
 # Compiled class file
 *.class
+target/
+.quarkus/
 
 # Log file
 *.log

@@ -1,0 +1,6 @@
+spec:
+  template:
+    spec:
+      containers:
+      - name: quarkus-todo-demo-app-aks
+        image: quay.io/USERNAME/todo-quarkus-aks:1.1
