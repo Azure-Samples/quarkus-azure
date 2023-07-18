@@ -1,12 +1,12 @@
 package io.quarkus.sample;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.*;
 
 import jakarta.validation.constraints.NotBlank;
 import java.util.List;
+import java.util.Objects;
+import java.util.StringJoiner;
 
 @Entity
 @Table(name = "Todo")
@@ -71,6 +71,14 @@ public class Todo {
     public Todo() {
     }
 
+    public Todo(Long id, String title, boolean completed, int order, String url) {
+        this.id = id;
+        this.title = title;
+        this.completed = completed;
+        this.order = order;
+        this.url = url;
+    }
+
     // Getters and setters for the fields
 
     public Long getId() {
@@ -112,5 +120,35 @@ public class Todo {
     public void setUrl(String url) {
         this.url = url;
     }
+
+    @Override
+	public String toString() {
+		return new StringJoiner(", ", Todo.class.getSimpleName() + "[", "]")
+			.add("id=" + this.id)
+			.add("title='" + this.title + "'")
+			.add("completed='" + this.completed + "'")
+            .add("order='" + this.order + "'")
+            .add("url='" + this.url + "'")
+			.toString();
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) {
+			return true;
+		}
+
+		if ((o == null) || (getClass() != o.getClass())) {
+			return false;
+		}
+
+		Todo todo = (Todo) o;
+		return this.id.equals(todo.id);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(this.id);
+	}
 
 }
