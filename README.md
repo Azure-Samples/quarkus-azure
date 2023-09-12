@@ -5,3 +5,7 @@
 ## aks-quarkus
 
 - Sample application for [Deploy a Java application with Quarkus on an Azure Kubernetes Service (AKS) cluster](https://learn.microsoft.com/en-us/azure/aks/howto-deploy-java-quarkus-app)
+
+## aca-quarkus
+
+- Sample application for [Deploy a Java application with Quarkus on an Azure Container Apps](https://learn.microsoft.com/)
