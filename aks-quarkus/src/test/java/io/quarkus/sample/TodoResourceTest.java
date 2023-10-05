@@ -14,6 +14,7 @@ import java.util.List;
 
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.core.Is.is;
+import static org.hamcrest.core.StringContains.containsString;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @QuarkusTest
@@ -32,7 +33,11 @@ class TodoResourceTest {
         get("/api/1").then()
                 .statusCode(HttpStatus.SC_OK)
                 .contentType(MediaType.APPLICATION_JSON)
+<<<<<<< Updated upstream
                 .body("title", is("Introduction to Quarkus Todo App"))
+=======
+                .body("title", containsString("Introduction to Quarkus"))
+>>>>>>> Stashed changes
                 .body("completed", is(false));
     }
 
