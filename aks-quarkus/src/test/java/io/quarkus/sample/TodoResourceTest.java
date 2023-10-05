@@ -33,11 +33,7 @@ class TodoResourceTest {
         get("/api/1").then()
                 .statusCode(HttpStatus.SC_OK)
                 .contentType(MediaType.APPLICATION_JSON)
-<<<<<<< Updated upstream
-                .body("title", is("Introduction to Quarkus Todo App"))
-=======
                 .body("title", containsString("Introduction to Quarkus"))
->>>>>>> Stashed changes
                 .body("completed", is(false));
     }
 
