@@ -18,4 +18,12 @@ public class GreetingTest
                 .contentType("application/json")
                 .body(equalTo("\"hello funqy\""));
     }
+
+    @Test
+    public void testRESTEasy() {
+        RestAssured.when().get("/hello").then()
+                .statusCode(200)
+                .contentType("application/json")
+                .body(equalTo("\"hello RESTEasy\""));
+    }
 }
