@@ -8,4 +8,4 @@
 
 ## aca-quarkus
 
-- Sample application for [Deploy a Java application with Quarkus on an Azure Container Apps](https://learn.microsoft.com/)
+- Sample application for [Deploy a Java application with Quarkus on an Azure Container Apps](https://learn.microsoft.com/azure/developer/java/ee/deploy-java-quarkus-app))
