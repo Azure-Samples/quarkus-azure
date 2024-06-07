@@ -50,8 +50,9 @@ public class ProfilePage {
 
     private TemplateInstance getProfile() {
         return profile
-                .data("identity", identity)
-                .data("accessToken", accessToken);
+                .data("name", identity.getPrincipal().getName())
+                .data("roles", identity.getRoles())
+                .data("scopes", accessToken.getClaim("scp"));
     }
 
 }
