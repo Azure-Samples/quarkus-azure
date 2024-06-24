@@ -1,4 +1,4 @@
-package no.kantega;
+package com.example;
 
 import io.quarkus.qute.Template;
 import io.quarkus.qute.TemplateInstance;
