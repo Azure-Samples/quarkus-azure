@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+</head>
+<body>
+<h1>Hello, {name}</h1>
+<h2>Roles</h2>
+<ul>
+    {#if roles}
+        {#for role in roles}
+            <li>{role}</li>
+        {/for}
+    {#else}
+        <li>No roles found!</li>
+    {/if}
+</ul>
+<h2>Scopes</h2>
+<p>
+    {scopes}
+</p>
+<h1>
+    <b><a href="/logout">Sign out</a></b>
+</h1>
+</body>
+</html>
