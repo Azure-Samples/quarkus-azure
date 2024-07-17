@@ -2,7 +2,6 @@ package com.example;
 
 import io.quarkus.qute.Template;
 import io.quarkus.qute.TemplateInstance;
-import io.quarkus.security.Authenticated;
 import io.quarkus.security.identity.SecurityIdentity;
 
 import org.eclipse.microprofile.jwt.JsonWebToken;
@@ -17,7 +16,7 @@ import jakarta.ws.rs.core.MediaType;
 import static java.util.Objects.requireNonNull;
 
 @Path("/profile")
-@Authenticated
+@RolesAllowed("**")
 public class ProfilePage {
 
     private final Template profile;
