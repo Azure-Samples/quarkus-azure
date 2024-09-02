@@ -12,4 +12,4 @@
 
 ## entra-id-quarkus
 
-- Sample application for **Integrate Quarkus with Microsoft Entra ID** (TODO: guide is in progress)
+- Sample application for [Secure Quarkus applications with Microsoft Entra ID using OpenID Connect](https://learn.microsoft.com/azure/developer/java/ee/quarkus-with-microsoft-entra-id)
