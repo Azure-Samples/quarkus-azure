@@ -29,8 +29,6 @@ hs_err_pid*
 *.ipr
 *.iml
 *.iws
-<<<<<<< Updated upstream
-=======
 
 # NetBeans
 nb-configuration.xml
@@ -61,4 +59,3 @@ pom.xml.releaseBackup
 pom.xml.versionsBackup
 release.properties
 .quarkus
->>>>>>> Stashed changes
