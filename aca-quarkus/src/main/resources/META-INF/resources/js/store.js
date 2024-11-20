@@ -8,23 +8,43 @@
 
     exports.todoStorage = {
         fetch: async function () {
-            const response = await axios.get(serverUrl);
-            console.log(response.data);
-            return response.data;
+            const response = await fetch(serverUrl);
+            const data = await response.json();
+            console.log(data);
+            return data;
         },
         add : async function(item) {
           console.log("Adding todo item " + item.title);
-          return (await axios.post(serverUrl, item)).data;
+          const response = await fetch(serverUrl, {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(item)
+          });
+          return await response.json();
         },
         save: async function (item) {
             console.log("save called with", item);
-            await axios.patch(serverUrl + item.id, item);
+            await fetch(serverUrl + item.id, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(item)
+            });
         },
         delete: async function(item) {
-            await axios.delete(serverUrl + item.id);
+            console.log("delete called with", item);
+            await fetch(serverUrl + item.id, {
+                method: 'DELETE'
+            });
         },
         deleteCompleted: async function() {
-            await axios.delete(serverUrl);
+            console.log("deleteCompleted called");
+            await fetch(serverUrl, {
+                method: 'DELETE'
+            });
         }
     };
 
