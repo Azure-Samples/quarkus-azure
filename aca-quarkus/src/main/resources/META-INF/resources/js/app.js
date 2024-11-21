@@ -1,5 +1,5 @@
 /*global Vue, todoStorage */
-var filters = {
+const filters = {
     all: function (todos) {
         return todos;
     },
@@ -25,7 +25,7 @@ const todoFocus = {
 
 const { createApp } = Vue
 
-var app = createApp({
+const app = createApp({
     // app initial state
     data() {
         return {
