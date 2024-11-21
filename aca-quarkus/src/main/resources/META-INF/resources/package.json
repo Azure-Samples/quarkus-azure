@@ -1,7 +1,6 @@
 {
   "private": true,
   "dependencies": {
-    "vue": "^2.1.8",
     "todomvc-common": "^1.0.5",
     "todomvc-app-css": "^2.4.3"
   }
