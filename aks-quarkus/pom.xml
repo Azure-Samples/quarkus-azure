@@ -69,6 +69,11 @@
       <artifactId>quarkus-jdbc-postgresql</artifactId>
     </dependency>
     <dependency>
+      <groupId>com.azure</groupId>
+      <artifactId>azure-identity-extensions</artifactId>
+      <version>1.1.20</version>
+    </dependency>
+    <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-rest-jackson</artifactId>
     </dependency>
