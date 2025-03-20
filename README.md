@@ -13,3 +13,7 @@
 ## entra-id-quarkus
 
 - Sample application for [Secure Quarkus applications with Microsoft Entra ID using OpenID Connect](https://learn.microsoft.com/azure/developer/java/ee/quarkus-with-microsoft-entra-id)
+
+## storage-blob-quarkus
+
+- Sample application for [Quickstart: Quarkus extension for Azure Blob Storage](https://learn.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-java-quarkus)
