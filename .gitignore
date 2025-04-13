@@ -59,3 +59,7 @@ pom.xml.releaseBackup
 pom.xml.versionsBackup
 release.properties
 .quarkus
+
+# Node
+node_modules/
+node/
