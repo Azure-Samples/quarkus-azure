@@ -153,41 +153,6 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>com.microsoft.azure</groupId>
-                <artifactId>azure-webapp-maven-plugin</artifactId>
-                <version>2.13.0</version>
-                <configuration>
-                    <appName>todo-quarkus-app</appName>
-                    <resourceGroup>todo-quarkus-app-rg</resourceGroup>
-                    <javaVersion>Java 17</javaVersion>
-                    <webContainer>Java SE</webContainer>
-                    <appSettings>
-                        <property>
-                            <name>PORT</name>
-                            <value>8080</value>
-                        </property>
-                        <property>
-                            <name>WEBSITES_PORT</name>
-                            <value>8080</value>
-                        </property>
-                        <property>
-                            <name>WEBSITE_SKIP_AUTOCONFIGURE_DATABASE</name>
-                            <value>true</value>
-                        </property>
-                    </appSettings>
-                    <deployment>
-                        <resources>
-                            <resource>
-                                <directory>${project.basedir}/target</directory>
-                                <includes>
-                                    <include>todo-runner.jar</include>
-                                </includes>
-                            </resource>
-                        </resources>
-                    </deployment>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
 </project>
