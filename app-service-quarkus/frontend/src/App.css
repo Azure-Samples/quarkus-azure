@@ -73,7 +73,7 @@ li {
   height: 16px;
   opacity: 0.5;
   width: 23px;
-  background-image: url('/remove.png'); /* Replace with your image path */
+  background-image: url('/public/remove.png'); /* Replace with your image path */
   background-size: cover;
 }
 

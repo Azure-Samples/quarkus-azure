@@ -16,7 +16,8 @@
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject",
-    "json-server": "json-server --watch src/json-server/Todos.json --port 3001"
+    "json-server": "json-server --watch src/json-server/Todos.json --port 3001",
+    "postinstall": "npx npm-force-resolutions"
   },
   "eslintConfig": {
     "extends": [
@@ -37,6 +38,16 @@
     ]
   },
   "devDependencies": {
-    "json-server": "^1.0.0-beta.3"
+    "json-server": "^1.0.0-beta.3",
+    "npm-force-resolutions": "^0.0.10",
+    "postcss": "8.4.31"
+  },
+  "overrides": {
+    "nth-check": "2.1.1",
+    "postcss": "8.4.31"
+  },
+  "resolutions": {
+    "nth-check": "2.1.1",
+    "postcss": "8.4.31"
   }
 }

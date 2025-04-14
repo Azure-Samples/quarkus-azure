@@ -116,7 +116,7 @@
                         </goals>
                         <phase>generate-resources</phase>
                         <configuration>
-                            <arguments>install</arguments>
+                            <arguments>install --no-save</arguments>
                         </configuration>
                     </execution>
                     <execution>
