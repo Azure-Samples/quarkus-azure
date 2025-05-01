@@ -17,3 +17,11 @@
 ## storage-blob-quarkus
 
 - Sample application for [Quickstart: Quarkus extension for Azure Blob Storage](https://learn.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-java-quarkus)
+
+## app-insights-quarkus
+
+- Sample application for [Observe Quarkus Apps with Azure Application Insights using OpenTelemetry](https://techcommunity.microsoft.com/blog/AppsonAzureBlog/observe-quarkus-apps-with-azure-application-insights-using-opentelemetry/4391774)
+
+## app-service-quarkus
+
+- Sample application for [Tutorial: Connect to a PostgreSQL database from a Quarkus web app on Azure App Service without secrets using a managed identity](./app-service-quarkus/README.md)
