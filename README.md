@@ -10,6 +10,10 @@
 
 - Sample application for [Deploy a Java application with Quarkus on an Azure Container Apps](https://learn.microsoft.com/azure/developer/java/ee/deploy-java-quarkus-app)
 
+## aca-quarkus-healthcheck
+
+- Sample application for [Configure health probes for Quarkus Apps on Azure Container Apps](https://techcommunity.microsoft.com/blog/appsonazureblog/configure-health-probes-for-quarkus-apps-on-azure-container-apps/4413965)
+
 ## entra-id-quarkus
 
 - Sample application for [Secure Quarkus applications with Microsoft Entra ID using OpenID Connect](https://learn.microsoft.com/azure/developer/java/ee/quarkus-with-microsoft-entra-id)
