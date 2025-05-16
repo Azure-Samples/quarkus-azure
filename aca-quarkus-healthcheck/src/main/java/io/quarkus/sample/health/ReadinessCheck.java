@@ -19,7 +19,7 @@ import io.quarkus.sample.TodoResource;
 @Readiness
 @ApplicationScoped
 public class ReadinessCheck implements HealthCheck {
-    private static final String READINESS_CHECK = TodoResource.class.getSimpleName() + " Readiness Check";
+    private static final String READINESS_CHECK = TodoResource.class.getSimpleName() + " API reachable";
     private static final String API_URL = "http://localhost:8080/api";
 
     private boolean isHealthy() {
