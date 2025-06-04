@@ -29,3 +29,7 @@
 ## app-service-quarkus
 
 - Sample application for [Tutorial: Connect to a PostgreSQL database from a Quarkus web app on Azure App Service without secrets using a managed identity](./app-service-quarkus/README.md)
+
+## servicebus-quarkus
+
+- Sample application for [Deploy a Quarkus native image to Azure Container Apps that connects to Azure Service Bus with managed identity authentication](./servicebus-quarkus/README.md)
