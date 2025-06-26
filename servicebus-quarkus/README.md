@@ -17,7 +17,61 @@ You also need to clone the repository and switch to the directory of the sample.
 ```
 git clone https://github.com/majguo/quarkus-azure.git
 cd quarkus-azure/servicebus-quarkus
+git checkout 2025-06-26
 ```
+
+## Running the Quarkus application in development mode
+
+The latest version of the `quarkus-azure-servicebus` extension supports DevServices, you can run the Quarkus application in development mode without a real Azure Service Bus instance. The extension will automatically start a local instance of Azure Service Bus emulator for you.
+
+```
+# Create a configuration file for the emulator
+mkdir -p src/main/resources
+cat << EOF > src/main/resources/servicebus-config.json
+{
+  "UserConfig": {
+    "Namespaces": [
+      {
+        "Name": "sbemulatorns",
+        "Queues": [{
+           "Name": "test-queue",
+           "Properties": {
+             "DeadLetteringOnMessageExpiration": false,
+             "DefaultMessageTimeToLive": "PT1H",
+             "DuplicateDetectionHistoryTimeWindow": "PT20S",
+             "ForwardDeadLetteredMessagesTo": "",
+             "ForwardTo": "",
+             "LockDuration": "PT1M",
+             "MaxDeliveryCount": 3,
+             "RequiresDuplicateDetection": false,
+             "RequiresSession": false
+           }
+         }],
+        "Topics": []
+      }
+    ],
+    "Logging": {
+      "Type": "Console"
+    }
+  }
+}
+EOF
+
+# The DevServices is enabled by default, but you need to accept the license agreement
+export QUARKUS_AZURE_SERVICEBUS_DEVSERVICES_LICENSE_ACCEPTED=true
+
+# Start the sample app in dev mode
+mvn quarkus:dev
+
+# Open a new terminal and run the following commands to test the sample running in dev mode
+curl http://localhost:8080/quarkus-azure-servicebus/messages -X POST -d '{"message": "Hello Azure Service Bus!"}' -H "Content-Type: application/json"
+curl http://localhost:8080/quarkus-azure-servicebus/messages
+
+# Switch back to the original terminal and stop the Quarkus application, and you can clean up the emulator config file
+rm -rf src/main/resources
+```
+
+The following sections guide you through deploying the Quarkus application to Azure Container Apps with a real Azure Service Bus instance, and using a user-assigned managed identity to authenticate to Azure Service Bus.
 
 ## Preparing the Azure services
 
