@@ -18,14 +18,14 @@
     <maven.compiler.target>17</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <quarkus-plugin.version>2.13.0.Final</quarkus-plugin.version>
+    <quarkus-plugin.version>2.16.10.Final</quarkus-plugin.version>
     <quarkus.package.type>uber-jar</quarkus.package.type>
     <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
     <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
-    <quarkus.platform.version>2.13.0.Final</quarkus.platform.version>
+    <quarkus.platform.version>2.16.10.Final</quarkus.platform.version>
     <resources-plugin.version>3.1.0</resources-plugin.version>
     <stagingDirectory>${project.build.directory}/azure-functions/${functionAppName}</stagingDirectory>
-    <surefire-plugin.version>3.0.0-M7</surefire-plugin.version>
+    <surefire-plugin.version>3.1.2</surefire-plugin.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -42,6 +42,10 @@
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-funqy-http</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-resteasy-reactive</artifactId>
     </dependency>
     <dependency>
       <groupId>io.quarkus</groupId>
